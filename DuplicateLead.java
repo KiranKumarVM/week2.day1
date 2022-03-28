@@ -29,10 +29,12 @@ public class DuplicateLead {
         System.out.println(title);
         
         driver.findElement(By.linkText("Duplicate Lead")).click();
-        driver.findElement(By.id("createLeadForm_companyName")).clear();
-        driver.findElement(By.id("createLeadForm_companyName")).sendKeys("CTS");
-        driver.findElement(By.id("createLeadForm_firstName")).clear();
-        driver.findElement(By.id("createLeadForm_firstName")).sendKeys("SaiRam");
+        WebElement comName = driver.findElement(By.id("createLeadForm_companyName"));
+        comName.clear();
+        comName.sendKeys("CTS");
+        WebElement firstName = driver.findElement(By.id("createLeadForm_firstName"));
+        firstName.clear();
+        firstName.sendKeys("SaiRam");
         driver.findElement(By.className("smallSubmit")).click();
         
         String title2 = driver.getTitle();
